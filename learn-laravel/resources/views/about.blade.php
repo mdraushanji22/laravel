@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>About</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 
 <body>
-    <h1 class="text-center font-bold text-4xl text-green-400">This is my home page</h1>
+    <h1 class="text-center text-4xl font-bold text-blue-300">This About page</h1>
+    <br>
+    <br>
+    <h2 class="text-center text-3xl font-bold text-green-500">{{$name}}</h2>
 </body>
 
 </html>
