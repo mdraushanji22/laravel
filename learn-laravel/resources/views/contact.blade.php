@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Contact</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 
 <body>
-    <h1 class="text-center font-bold text-4xl text-green-400">This is my home page</h1>
+    <h1>This is contact page</h1>
     <br>
-    <a href="/">Welcom Page</a>
-    <a href="/about/Raushan">About Page</a>
-    <a href="/contact">Contact me</a>
+    <input type="text" placeholder="Enter your name">
+    <br>
+    <input type="number" placeholder="Enter you phone">
 </body>
 
 </html>

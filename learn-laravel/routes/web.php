@@ -6,12 +6,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
+// Route::get('/home', function () {
 
-    return view('home');
-});
+//     return view('home');
+// });
+
+Route::redirect('/home', '/');
+
+Route::view('/home', 'home');
 
 Route::get('/about/{name}', function ($name) {
 
     return view('about', ['name' => $name]);
+});
+Route::get('/contact', function () {
+    return view('contact');
 });
