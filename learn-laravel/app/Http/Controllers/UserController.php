@@ -20,4 +20,9 @@ class UserController extends Controller
         // return "<h1>Hello this is:</h1> <h1>" . $name . "</h1>";
         return view('getuser', ['name' => $name]);
     }
+
+    function adminLogin()
+    {
+        return view('admin.login');
+    }
 }
