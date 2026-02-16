@@ -8,7 +8,8 @@ class UserController extends Controller
 {
     function getUser()
     {
-        return "Raushan";
+        // return "Raushan";
+        return view('user');
     }
     function contactUser()
     {
@@ -16,6 +17,7 @@ class UserController extends Controller
     }
     function getName($name)
     {
-        return "<h1>Hello this is:</h1> <h1>" . $name . "</h1>";
+        // return "<h1>Hello this is:</h1> <h1>" . $name . "</h1>";
+        return view('getuser', ['name' => $name]);
     }
 }
