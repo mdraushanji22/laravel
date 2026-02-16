@@ -25,3 +25,4 @@ Route::get('/contact', function () {
 });
 
 Route::get('user', [UserController::class, 'getUser']);
+Route::get('contact', [UserController::class, 'contactUser']);

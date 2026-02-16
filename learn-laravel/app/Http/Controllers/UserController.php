@@ -10,4 +10,8 @@ class UserController extends Controller
     {
         return "Raushan";
     }
+    function contactUser()
+    {
+        return "6280779503";
+    }
 }
