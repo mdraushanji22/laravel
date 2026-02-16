@@ -26,3 +26,4 @@ Route::get('/contact', function () {
 
 Route::get('user', [UserController::class, 'getUser']);
 Route::get('contact', [UserController::class, 'contactUser']);
+Route::get('username/{name}', [UserController::class, 'getName']);
