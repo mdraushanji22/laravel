@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class UserController extends Controller
 {
@@ -23,6 +24,10 @@ class UserController extends Controller
 
     function adminLogin()
     {
-        return view('admin.login');
+        if (View::exists('admin.login')) {
+            return view('admin.login');
+        } else {
+            echo "no view found";
+        }
     }
 }
