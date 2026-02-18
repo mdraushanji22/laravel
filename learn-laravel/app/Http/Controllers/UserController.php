@@ -9,8 +9,11 @@ class UserController extends Controller
 {
     function getUser()
     {
+        $username = 'Raushan bhai';
+        $users = ['Jilani', 'Nabeel'];
+        return view('home', ['username' => $username, 'users' => $users]);
         // return "Raushan";
-        return view('user');
+        // return view('user');
     }
     function contactUser()
     {

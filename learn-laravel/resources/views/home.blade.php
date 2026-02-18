@@ -10,8 +10,13 @@
 </head>
 
 <body>
+
     <h1 class="text-center font-bold text-4xl text-green-400">This is my home page</h1>
+    <h1>{{$username}}</h1>
     <br>
+    <h2>
+        {{$users[0]}}
+    </h2>
     <a href="/">Welcom Page</a>
     <a href="/about/Raushan">About Page</a>
     <a href="/contact">Contact me</a>
