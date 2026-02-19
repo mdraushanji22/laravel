@@ -28,6 +28,11 @@
     <a href="/about/Raushan">About Page</a>
     <a href="/contact">Contact me</a>
     <div>
+        @foreach($users as $user)
+        <h4>{{$user}}</h4>
+        @endforeach
+    </div>
+    <div>
         @for($i=0;$i<=10;$i++)
             <h3>{{$i}}</h3>
             @endfor
