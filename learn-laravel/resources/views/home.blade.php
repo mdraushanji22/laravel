@@ -17,9 +17,9 @@
     <h2>
         {{$users[0]}}
     </h2> -->
-    @if($username =='Raushan bhai');
+    @if($username =='Raushan bhai')
     <h2>This is Raushan bhai</h2>
-    elseif($users=='jilani')
+    @elseif($users[0]=='jilani')
     <h2>This is jilani</h2>
     @else
     <h2>Other users</h2>
