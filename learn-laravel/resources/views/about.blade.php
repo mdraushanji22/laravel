@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    @include('common.header')
     <h1 class="text-center text-4xl font-bold text-blue-300">This About page</h1>
     <br>
     <br>
