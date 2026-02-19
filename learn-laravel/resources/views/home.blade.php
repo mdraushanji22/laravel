@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
 
 </head>
 
@@ -27,6 +27,11 @@
     <a href="/">Welcom Page</a>
     <a href="/about/Raushan">About Page</a>
     <a href="/contact">Contact me</a>
+    <div>
+        @for($i=0;$i<=10;$i++)
+            <h3>{{$i}}</h3>
+            @endfor
+    </div>
 </body>
 
 </html>
