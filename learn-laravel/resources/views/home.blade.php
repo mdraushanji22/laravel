@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    @include('common.header')
 
     <h1 class="text-center font-bold text-4xl text-green-400">This is my home page</h1>
     <!-- <h1>{{$username}}</h1>
