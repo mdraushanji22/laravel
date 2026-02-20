@@ -13,6 +13,8 @@
     @include('common.header')
     <h1 class="text-center text-4xl font-bold text-blue-300">This About page</h1>
     <h2 class="text-center text-3xl font-bold text-green-500">{{$name}}</h2>
+    @include('common.inner',['page'=>"This is About Page"])
+
 </body>
 
 </html>
