@@ -28,3 +28,4 @@ Route::get('user', [UserController::class, 'getUser']);
 Route::get('contact', [UserController::class, 'contactUser']);
 Route::get('username/{name}', [UserController::class, 'getName']);
 Route::get('admin', [UserController::class, 'adminLogin']);
+Route::view('user-form', 'user-form');
