@@ -1,7 +1,8 @@
 <div>
     <h2>Add New User</h2>
 
-    <form action="" method="post">
+    <form action="adduser" method="post">
+        @csrf
         <div class="user-form">
             <input type="text" placeholder="Enter your name" name="username" require>
         </div>

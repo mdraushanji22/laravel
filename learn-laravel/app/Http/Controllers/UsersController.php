@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     //
-    function addUser()
+    function addUser(Request $request)
     {
-        echo "Add User Called";
+        echo $request->username;
+        echo $request->email;
+        echo $request->city;
+        return "User form submitted";
     }
 }
