@@ -3,32 +3,85 @@
 
     <form action="adduser" method="post">
         @csrf
+
         <div class="user-form">
-            <input type="text" placeholder="Enter your name" name="username" require>
+            <input type="text" placeholder="Enter your name" name="username" required>
         </div>
+
         <div class="user-form">
-            <input type="email" placeholder="Enter your email" name="email" require>
+            <input type="email" placeholder="Enter your email" name="email" required>
         </div>
+
         <div class="user-form">
-            <input type="text" placeholder="Enter your city" name="city" require>
+            <input type="text" placeholder="Enter your city" name="city" required>
         </div>
+
+        <!-- USER SKILLS -->
+        <div class="user-form">
+            <h4>User Skills</h4>
+
+            <label class="check-label">
+                <input type="checkbox" name="skill[]" value="PHP">
+                PHP
+            </label>
+
+            <label class="check-label">
+                <input type="checkbox" name="skill[]" value="NODE">
+                NODE
+            </label>
+
+            <label class="check-label">
+                <input type="checkbox" name="skill[]" value="JAVA">
+                JAVA
+            </label>
+        </div>
+
+        <!-- GENDER -->
+        <div class="user-form">
+            <h4>Gender</h4>
+
+            <label class="check-label">
+                <input type="radio" name="gender" value="MALE">
+                Male
+            </label>
+
+            <label class="check-label">
+                <input type="radio" name="gender" value="FEMALE">
+                Female
+            </label>
+        </div>
+
         <div class="user-form">
             <button>Add User</button>
         </div>
+
     </form>
 </div>
+
 <style>
-    input {
+    input[type="text"],
+    input[type="email"] {
         width: 40%;
         padding: 12px 20px;
         margin: 8px 0;
-        display: inline-block;
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
-        /* Ensures padding/border are included in width */
         background-color: #f8f8f8;
         font-size: 16px;
+    }
+
+    .check-label {
+        display: inline-block;
+        margin-right: 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .check-label input {
+        margin-right: 6px;
+        transform: scale(1.3);
+        cursor: pointer;
     }
 
     button {
@@ -41,7 +94,6 @@
         color: white;
         font-size: 16px;
         cursor: pointer;
-        box-sizing: border-box;
         transition: background-color 0.3s ease;
     }
 
@@ -50,6 +102,11 @@
     }
 
     .user-form {
-        margin: 10px;
+        margin: 12px 0;
+    }
+
+    h4 {
+        margin-bottom: 8px;
+        color: #333;
     }
 </style>

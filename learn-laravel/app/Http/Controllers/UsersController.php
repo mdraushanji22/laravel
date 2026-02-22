@@ -9,14 +9,14 @@ class UsersController extends Controller
     //
     function addUser(Request $request)
     {
-        echo $request->username;
+        echo "User Name is: $request->username";
         echo "<br>";
-        echo $request->email;
-        echo "<br>";
-
-        echo $request->city;
+        echo "User Email Is: $request->email";
         echo "<br>";
 
-        return "User form submitted";
+        echo "User City is: $request->city";
+        echo "<br>";
+
+        return "<h3 style=color:green>User form submitted</h3>";
     }
 }
