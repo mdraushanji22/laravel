@@ -14,9 +14,6 @@ class UsersController extends Controller
         echo "User Email Is: $request->email";
         echo "<br>";
 
-        echo "User City is: $request->city";
-        echo "<br>";
-
         return "<h3 style=color:green>User form submitted</h3>";
     }
 }
