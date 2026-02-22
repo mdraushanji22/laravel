@@ -47,6 +47,7 @@
             <div class="user-form">
                 <h4>City</h4>
                 <select name="city" class="dropdown">
+                    <option value="select">Select City</option>
                     <option value="Delhi">Delhi</option>
                     <option value="Noida">Noida</option>
                     <option value="Gurgaon">Gurgaon</option>

@@ -13,6 +13,16 @@ class UsersController extends Controller
         echo "<br>";
         echo "User Email Is: $request->email";
         echo "<br>";
+        $skills = implode(", ", $request->skill);
+        print_r("User Skill is: $skills");
+        echo "<br>";
+        echo "User Gender is: $request->gender";
+        echo "<br>";
+        echo "User City is: $request->city";
+        echo "<br>";
+        echo "User Age is: $request->age";
+        echo "<br>";
+
 
         return "<h3 style=color:green>User form submitted</h3>";
     }
