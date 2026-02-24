@@ -24,6 +24,6 @@ class UsersController extends Controller
         echo "<br>";
 
 
-        return "<h3 style=color:green>User form submitted</h3>";
+        return "<h3 style=color:green>User Details sumbitted successfully</h3>";
     }
 }
