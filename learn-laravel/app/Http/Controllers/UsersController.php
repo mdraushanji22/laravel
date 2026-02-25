@@ -29,9 +29,6 @@ class UsersController extends Controller
             'gender' => 'required',
             'city' => 'required',
             'age' => 'required',
-
-
-
         ]);
 
 

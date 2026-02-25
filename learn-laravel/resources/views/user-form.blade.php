@@ -2,6 +2,13 @@
     <div class="form-card">
 
         <h1 class="header">Add New User</h1>
+        @if($errors->any())
+        @foreach($errors->all() as $error)
+        <div>
+            {{$error}}
+        </div>
+        @endforeach
+        @endif
 
         <form action="adduser" method="post">
             @csrf
