@@ -23,9 +23,14 @@ class UsersController extends Controller
         echo "User Age is: $request->age";
         echo "<br>";
         $request->validate([
-            'username' => 'require',
-            'username' => 'require',
-            'username' => 'require',
+            'username' => 'required',
+            'email' => 'required',
+            'skill.*' => 'required',
+            'gender' => 'required',
+            'city' => 'required',
+            'age' => 'required',
+
+
 
         ]);
 
