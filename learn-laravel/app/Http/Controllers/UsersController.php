@@ -22,6 +22,12 @@ class UsersController extends Controller
         echo "<br>";
         echo "User Age is: $request->age";
         echo "<br>";
+        $request->validate([
+            'username' => 'require',
+            'username' => 'require',
+            'username' => 'require',
+
+        ]);
 
 
         return "<h3 style=color:green>User Details sumbitted successfully</h3>";
