@@ -2,12 +2,14 @@
     <div class="form-card">
 
         <h1 class="header">Add New User</h1>
-        @if($errors->any())
-        @foreach($errors->all() as $error)
-        <div>
-            {{$error}}
+        @if ($errors->any())
+        <div style="background:#ffdddd; padding:10px; border-left:4px solid red; margin-bottom:15px;">
+            <ul style="margin:0; padding-left:20px;">
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
-        @endforeach
         @endif
 
         <form action="adduser" method="post">
