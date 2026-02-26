@@ -2,7 +2,7 @@
     <div class="form-card">
 
         <h1 class="header">Add New User</h1>
-        @if ($errors->any())
+        <!-- @if ($errors->any())
         <div style="background:#ffdddd; padding:10px; border-left:4px solid red; margin-bottom:15px;">
             <ul style="margin:0; padding-left:20px;">
                 @foreach ($errors->all() as $error)
@@ -10,7 +10,7 @@
                 @endforeach
             </ul>
         </div>
-        @endif
+        @endif -->
 
         <form action="adduser" method="post">
             @csrf
