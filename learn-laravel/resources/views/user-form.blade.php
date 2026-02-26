@@ -16,12 +16,12 @@
             @csrf
 
             <div class="user-form">
-                <input type="text" placeholder="Enter your name" name="username" required>
+                <input type="text" placeholder="Enter your name" name="username">
                 <span style="color: red;">@error('username'){{$message}}@enderror</span>
             </div>
 
             <div class="user-form">
-                <input type="email" placeholder="Enter your email" name="email" required>
+                <input type="email" placeholder="Enter your email" name="email">
                 <span style="color: red;">@error('email'){{$message}}@enderror</span>
 
             </div>
