@@ -22,8 +22,9 @@
 
             <div class="user-form">
                 <input type="email" placeholder="Enter your email" name="email">
-                <span style="color: red;">@error('email'){{$message}}@enderror</span>
-
+                <span style="color:red;">
+                    @error('skill') {{ $message }} @enderror
+                </span>
             </div>
 
             <!-- USER SKILLS -->
