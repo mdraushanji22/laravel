@@ -30,6 +30,7 @@ class UsersController extends Controller
             'city' => 'required',
             'age' => 'required',
         ]);
+        return $request;
 
 
         return "<h3 style=color:green>User Details sumbitted successfully</h3>";

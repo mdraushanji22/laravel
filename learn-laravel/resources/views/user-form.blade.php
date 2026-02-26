@@ -17,11 +17,13 @@
 
             <div class="user-form">
                 <input type="text" placeholder="Enter your name" name="username" required>
-                <span>@error('username'){{$message}}@enderror</span>
+                <span style="color: red;">@error('username'){{$message}}@enderror</span>
             </div>
 
             <div class="user-form">
                 <input type="email" placeholder="Enter your email" name="email" required>
+                <span style="color: red;">@error('email'){{$message}}@enderror</span>
+
             </div>
 
             <!-- USER SKILLS -->
