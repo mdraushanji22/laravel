@@ -17,6 +17,7 @@
 
             <div class="user-form">
                 <input type="text" placeholder="Enter your name" name="username" required>
+                <span>@error('username'){{$message}}@enderror</span>
             </div>
 
             <div class="user-form">
