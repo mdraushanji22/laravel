@@ -21,8 +21,8 @@
             </div>
 
             <div class="user-form">
-                <input type="email" placeholder="Enter your email" name="email" value="{{old('email')}}">
-                <span style=" color:red;">
+                <input type="email" placeholder="Enter your email" name="email" value="{{old('username')}}">
+                <span style="color:red;">
                     @error('email') {{ $message }} @enderror
                 </span>
             </div>
@@ -32,15 +32,16 @@
                 <h4>User Skills</h4>
 
                 <label class="check-label">
-                    <input type="checkbox" name="skill[]" value="{{old('skill')}}"> PHP
+                    <input type="checkbox" name="skill[]" value="PHP" {{ is_array(old('skill')) && in_array('PHP', old('skill')) ? 'checked' : '' }}>
+                    PHP
                 </label>
 
                 <label class="check-label">
-                    <input type="checkbox" name="skill[]" value="{{old('skill')}}"> NODE
+                    <input type="checkbox" name="skill[]" value="NODE" {{ is_array(old('skill')) && in_array('NODE', old('skill')) ? 'checked' : '' }}> NODE
                 </label>
 
                 <label class="check-label">
-                    <input type="checkbox" name="skill[]" value="{{old('skill')}}"> JAVA
+                    <input type="checkbox" name="skill[]" value="JAVA" {{ is_array(old('skill')) && in_array('JAVA', old('skill')) ? 'checked' : '' }}> JAVA
                 </label>
                 <span style="color:red;">@error('skill') {{ $message }} @enderror</span>
 
