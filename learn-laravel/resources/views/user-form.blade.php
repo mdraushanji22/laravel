@@ -23,7 +23,7 @@
             <div class="user-form">
                 <input type="email" placeholder="Enter your email" name="email">
                 <span style="color:red;">
-                    @error('skill') {{ $message }} @enderror
+                    @error('email') {{ $message }} @enderror
                 </span>
             </div>
 
@@ -42,6 +42,9 @@
                 <label class="check-label">
                     <input type="checkbox" name="skill[]" value="JAVA"> JAVA
                 </label>
+                <span style="color:red;">
+                    @error('skill') {{ $message }} @enderror
+                </span>
             </div>
 
             <!-- GENDER -->

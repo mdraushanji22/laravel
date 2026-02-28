@@ -9,6 +9,15 @@ class UsersController extends Controller
     //
     function addUser(Request $request)
     {
+        $request->validate([
+            'username' => 'required',
+            'email' => 'required',
+            'skill.*' => 'required',
+            'gender' => 'required',
+            'city' => 'required',
+            'age' => 'required',
+        ]);
+        return $request;
         echo "User Name is: $request->username";
         echo "<br>";
         echo "User Email Is: $request->email";
@@ -22,16 +31,6 @@ class UsersController extends Controller
         echo "<br>";
         echo "User Age is: $request->age";
         echo "<br>";
-        $request->validate([
-            'username' => 'required',
-            'email' => 'required',
-            'skill.*' => 'required',
-            'gender' => 'required',
-            'city' => 'required',
-            'age' => 'required',
-        ]);
-        return $request;
-
 
         return "<h3 style=color:green>User Details sumbitted successfully</h3>";
     }
