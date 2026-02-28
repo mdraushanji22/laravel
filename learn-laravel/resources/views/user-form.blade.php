@@ -42,11 +42,8 @@
                 <label class="check-label">
                     <input type="checkbox" name="skill[]" value="JAVA"> JAVA
                 </label>
-                <span style="color:red;">
-                    @error('skill') {{ $message }} @enderror
-                </span>
+                @error('skill') <span style="color:red;">{{ $message }}</span> @enderror
             </div>
-
             <!-- GENDER -->
             <div class="user-form">
                 <h4>Gender</h4>
@@ -57,6 +54,9 @@
                 <label class="check-label">
                     <input type="radio" name="gender" value="FEMALE"> Female
                 </label>
+                <span style="color:red;">
+                    @error('gender') {{ $message }} @enderror
+                </span>
             </div>
 
             <!-- CITY -->
@@ -68,12 +68,17 @@
                     <option value="Noida">Noida</option>
                     <option value="Gurgaon">Gurgaon</option>
                 </select>
+                <span style="color:red;">
+                    @error('city') {{ $message }} @enderror
+                </span>
             </div>
-
             <!-- AGE -->
             <div class="user-form">
                 <h4>Age</h4>
                 <input type="range" name="age" min="18" max="100" class="range">
+                <span style="color:red;">
+                    @error('age') {{ $message }} @enderror
+                </span>
             </div>
 
             <div class="user-form">
