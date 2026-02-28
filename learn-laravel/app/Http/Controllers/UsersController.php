@@ -10,14 +10,15 @@ class UsersController extends Controller
     function addUser(Request $request)
     {
         $request->validate([
-            'username' => 'required',
-            'email' => 'required',
+            'username' => 'required | min:3 | max:10',
+            'email' => 'required | email',
+            'skill' => 'required | array',
             'skill.*' => 'required',
             'gender' => 'required',
-            'city' => 'required',
-            'age' => 'required',
+            'city' => 'required | max:10',
+            'age' => 'required|integer|min:18|max:100',
         ]);
-        return $request;
+
         echo "User Name is: $request->username";
         echo "<br>";
         echo "User Email Is: $request->email";

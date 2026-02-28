@@ -16,13 +16,13 @@
             @csrf
 
             <div class="user-form">
-                <input type="text" placeholder="Enter your name" name="username">
+                <input type="text" placeholder="Enter your name" name="username" value="{{old('username')}}">
                 <span style="color: red;">@error('username'){{$message}}@enderror</span>
             </div>
 
             <div class="user-form">
-                <input type="email" placeholder="Enter your email" name="email">
-                <span style="color:red;">
+                <input type="email" placeholder="Enter your email" name="email" value="{{old('email')}}">
+                <span style=" color:red;">
                     @error('email') {{ $message }} @enderror
                 </span>
             </div>
@@ -32,17 +32,18 @@
                 <h4>User Skills</h4>
 
                 <label class="check-label">
-                    <input type="checkbox" name="skill[]" value="PHP"> PHP
+                    <input type="checkbox" name="skill[]" value="{{old('skill')}}"> PHP
                 </label>
 
                 <label class="check-label">
-                    <input type="checkbox" name="skill[]" value="NODE"> NODE
+                    <input type="checkbox" name="skill[]" value="{{old('skill')}}"> NODE
                 </label>
 
                 <label class="check-label">
-                    <input type="checkbox" name="skill[]" value="JAVA"> JAVA
+                    <input type="checkbox" name="skill[]" value="{{old('skill')}}"> JAVA
                 </label>
-                @error('skill') <span style="color:red;">{{ $message }}</span> @enderror
+                <span style="color:red;">@error('skill') {{ $message }} @enderror</span>
+
             </div>
             <!-- GENDER -->
             <div class="user-form">
@@ -63,7 +64,7 @@
             <div class="user-form">
                 <h4>City</h4>
                 <select name="city" class="dropdown">
-                    <option value="select">Select City</option>
+                    <option value="">Select City</option>
                     <option value="Delhi">Delhi</option>
                     <option value="Noida">Noida</option>
                     <option value="Gurgaon">Gurgaon</option>
@@ -74,13 +75,39 @@
             </div>
             <!-- AGE -->
             <div class="user-form">
-                <h4>Age</h4>
-                <input type="range" name="age" min="18" max="100" class="range">
+                <h4>Age: <span id="ageValue" style="color:green; font-weight:bold;">--</span></h4>
+
+                <!-- Actual Slider -->
+                <input
+                    type="range"
+                    id="ageRange"
+                    min="18"
+                    max="100"
+                    value="18"
+                    class="range">
+
+                <!-- Hidden field that Laravel will validate -->
+                <input type="hidden" name="age" id="realAge" value="">
+
                 <span style="color:red;">
                     @error('age') {{ $message }} @enderror
                 </span>
             </div>
 
+            <script>
+                const slider = document.getElementById('ageRange');
+                const display = document.getElementById('ageValue');
+                const realAge = document.getElementById('realAge');
+
+                // Default (not selected yet)
+                display.textContent = "--";
+                realAge.value = "";
+
+                slider.addEventListener('input', function() {
+                    display.textContent = slider.value;
+                    realAge.value = slider.value; // store real age
+                });
+            </script>
             <div class="user-form">
                 <button>Add User</button>
             </div>
