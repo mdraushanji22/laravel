@@ -50,11 +50,13 @@
             <div class="user-form">
                 <h4>Gender</h4>
                 <label class="check-label">
-                    <input type="radio" name="gender" value="MALE"> Male
+                    <input type="radio" name="gender" value="MALE"
+                        {{ old('gender') == 'MALE' ? 'checked' : '' }}> Male
                 </label>
 
                 <label class="check-label">
-                    <input type="radio" name="gender" value="FEMALE"> Female
+                    <input type="radio" name="gender" value="FEMALE"
+                        {{ old('gender') == 'FEMALE' ? 'checked' : '' }}> Female
                 </label>
                 <span style="color:red;">
                     @error('gender') {{ $message }} @enderror
@@ -66,9 +68,9 @@
                 <h4>City</h4>
                 <select name="city" class="dropdown">
                     <option value="">Select City</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Noida">Noida</option>
-                    <option value="Gurgaon">Gurgaon</option>
+                    <option value="Delhi" {{ old('city') == 'Delhi' ? 'selected' : '' }}>Delhi</option>
+                    <option value="Noida" {{ old('city') == 'Noida' ? 'selected' : '' }}>Noida</option>
+                    <option value="Gurgaon" {{ old('city') == 'Gurgaon' ? 'selected' : '' }}>Gurgaon</option>
                 </select>
                 <span style="color:red;">
                     @error('city') {{ $message }} @enderror
@@ -76,19 +78,27 @@
             </div>
             <!-- AGE -->
             <div class="user-form">
-                <h4>Age: <span id="ageValue" style="color:green; font-weight:bold;">--</span></h4>
+                <h4>Age:
+                    <span id="ageValue" style="color:green; font-weight:bold;">
+                        {{ old('age') ? old('age') : '--' }}
+                    </span>
+                </h4>
 
-                <!-- Actual Slider -->
+                <!-- Slider -->
                 <input
                     type="range"
                     id="ageRange"
                     min="18"
                     max="100"
-                    value="18"
+                    value="{{ old('age') ? old('age') : 18 }}"
                     class="range">
 
-                <!-- Hidden field that Laravel will validate -->
-                <input type="hidden" name="age" id="realAge" value="">
+                <!-- Hidden field that Laravel validates -->
+                <input
+                    type="hidden"
+                    name="age"
+                    id="realAge"
+                    value="{{ old('age') ? old('age') : '' }}">
 
                 <span style="color:red;">
                     @error('age') {{ $message }} @enderror
@@ -100,13 +110,9 @@
                 const display = document.getElementById('ageValue');
                 const realAge = document.getElementById('realAge');
 
-                // Default (not selected yet)
-                display.textContent = "--";
-                realAge.value = "";
-
                 slider.addEventListener('input', function() {
                     display.textContent = slider.value;
-                    realAge.value = slider.value; // store real age
+                    realAge.value = slider.value;
                 });
             </script>
             <div class="user-form">
@@ -209,5 +215,10 @@
     .header {
         color: green;
         font-weight: bold;
+    }
+
+    .input-error {
+        border: 1px solid red;
+        color: red;
     }
 </style>
