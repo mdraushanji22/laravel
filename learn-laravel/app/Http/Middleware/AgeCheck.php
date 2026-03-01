@@ -15,6 +15,7 @@ class AgeCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
+        echo "echo from age check";
         return $next($request);
     }
 }
