@@ -15,7 +15,9 @@ class AgeCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        echo "echo from age check";
+        // echo "echo from age check";
+        echo "<pre>";
+        print_r($request->age);
         return $next($request);
     }
 }
