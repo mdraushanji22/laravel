@@ -17,7 +17,7 @@ class AgeCheck
     {
         // echo "echo from age check";
         echo "<pre>";
-        print_r($request->age);
+        print_r($request);
         return $next($request);
     }
 }
